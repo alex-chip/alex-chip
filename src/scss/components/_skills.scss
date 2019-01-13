@@ -1,6 +1,4 @@
-$size: 12rem;
-
-.Skills {
+ .Skills {
 	padding-bottom: $gap;
 	margin-bottom: $gap;
 
@@ -16,7 +14,7 @@ $size: 12rem;
 
 	&__container {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 		overflow: hidden;
 
 		@media screen and (min-width: $m) {
@@ -29,8 +27,8 @@ $size: 12rem;
 	&,
 	&::before,
 	&:after {
-		width: $size;
-		height: $size;
+		width: $size-progresive;
+		height: $size-progresive;
 		border-radius: 50%;
 	}
 	margin: auto;
@@ -45,12 +43,13 @@ $size: 12rem;
 	&:before {
 		padding: .5em;
 		box-sizing: border-box;
-		font-size: 2rem;
-		line-height: 6rem;
+		font-size: $size-progresive / 6;
+		line-height: $size-progresive / 2;
 	}
 	&:after {
 		text-transform: uppercase;
-		line-height: 12rem;
+		line-height: $size-progresive;
+		// font-size: $size-progresive / 6;
 	}
 }
 
@@ -58,7 +57,7 @@ $size: 12rem;
 	@include circular-progress(
 		85,
 		html,
-		orange,
+		$html-color,
 		$third-color
 	);
 }
@@ -67,7 +66,7 @@ $size: 12rem;
 	@include circular-progress(
 		70,
 		css,
-		steelblue,
+		$css-color,
 		$third-color
 	);
 }
@@ -76,7 +75,7 @@ $size: 12rem;
 	@include circular-progress(
 		50,
 		javascript,
-		teal,
+		$js-color,
 		$third-color
 	);
 }
@@ -85,7 +84,7 @@ $size: 12rem;
 	@include circular-progress(
 		60,
 		mongodb,
-		#7FC857,
+		$mongodb-color,
 		$third-color
 	);
 }
@@ -94,7 +93,7 @@ $size: 12rem;
 	@include circular-progress(
 		70,
 		mysql,
-		$first-color,
+		$mysql-color,
 		$third-color
 	);
 }
@@ -103,7 +102,7 @@ $size: 12rem;
 	@include circular-progress(
 		60,
 		nodejs,
-		$first-color,
+		$nodejs-color,
 		$third-color
 	);
 }

@@ -2,23 +2,35 @@
 
 // css
 :root {
+	// colores
 	--first-color: #D63C5E;
 	--second-color: #2C2939;
 	--third-color: #ECECEC;
 
-	--html-color: ;
-	--css-color: ;
-	--js-color: ;
+	--html-color: #DD4B25;
+	--css-color: #146EB0;
+	--js-color: #ED7E30;
 	--mongodb-color: #7FC857;
-	--mysql-color: ;
-	--nodejs-color: ;
+	--mysql-color: #005E86;
+	--nodejs-color: #6FA660;
+
+	// variable size para el tamaño de los circulos progresivos
+	--size-progresive: 12rem;
 }
 
+$size-progresive: 12rem;
 
 // sass
 $first-color: #D63C5E;
 $second-color: #2C2939;
 $third-color: #ECECEC;
+
+$html-color: #DD4B25;
+$css-color: #146EB0;
+$js-color: #ED7E30;
+$mongodb-color: #7FC857;
+$mysql-color: #005E86;
+$nodejs-color: #6FA660;
 
 // Variables para las tipo de fuentes
 $font-family: Arial, Helvetica, sans-serif;

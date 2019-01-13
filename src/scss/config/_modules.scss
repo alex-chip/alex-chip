@@ -16,7 +16,8 @@
 
 // Estilos para la lista de redes sociales
 .Social {
-	margin-bottom: 4em;
+	margin-bottom: $gap;
+
 	&__list {
 		display: flex;
 		justify-content: center;

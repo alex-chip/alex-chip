@@ -1,8 +1,7 @@
 .Banner {
-	background: url('../assets/img/banner1.jpg') center center / cover no-repeat;
+	background: url('https://previews.dropbox.com/p/thumb/AATNODL7emfpAGrhlVMCitY4SiXXjwzJIJwAcnvKh6z-2X7ArlwQGD4GHy-vIB-iFcTZxRvtM2dIwGLiHOs8nnTJP7G1H_RXYS9aC9Z1ONbPe2fhMIum0b6mHOz0cWvddiewSqXYMJnqpa8yCFpBtC8yP7mFk2bifvE09MkrcCT72kDetaomDo_vNK2XjflAXyGResH_wc8nP2UqIePmSTvNbwQwB79WbazguJCLRy5BmQ/p.jpeg?size=1280x960&size_mode=3') center center / cover no-repeat;
 	min-height: 100vh;
 	position: relative;
-	// margin-bottom: 2em;
 
 	&::before {
 		content: "";
@@ -11,7 +10,6 @@
 		height: 100%;
 		left: 0;
 		top: 0;
-		// background: rgba($second-color,.5);
 		background: linear-gradient(
 			to left,
 			var(--first-color),
