@@ -1,0 +1,51 @@
+// Modulo para titulos de secciones
+.Title-sections {
+	text-align: center;
+	color: #444;
+	margin: 0;
+	padding: .5em 0;
+}
+
+// Estilos para el fondo del Main, que encierra a
+// La seccion About y Skills
+.Main {
+	background-color: $third-color;
+	text-align: center;
+	color: #555;
+}
+
+// Estilos para la lista de redes sociales
+.Social {
+	margin-bottom: 4em;
+	&__list {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__item {
+		border: 1px solid #FFF;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-right: .5em;
+		transition: all .3s;
+
+		&:hover {
+			background: rgba($second-color, .8);
+		}
+	}
+
+	&__link {
+		color: #FFF;
+		cursor: pointer;
+		display: block;
+	}
+}
+
+// ancho maximo para el contenedor
+.container {
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+}

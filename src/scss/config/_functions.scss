@@ -1,0 +1,5 @@
+// funcion para calcular los grados de las barras de progreso
+@function progress($percent) {
+	$deg: $percent / 100 * 180;
+	@return #{$deg}deg;
+}

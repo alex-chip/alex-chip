@@ -1,0 +1,109 @@
+$size: 12rem;
+
+.Skills {
+	padding-bottom: $gap;
+	margin-bottom: $gap;
+
+	&__title {
+		margin: 0;
+		padding: 0;
+	}
+
+	&__description {
+		margin-top: 0;
+		margin-bottom: $gap;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		overflow: hidden;
+
+		@media screen and (min-width: $m) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+.circular-progress {
+	&,
+	&::before,
+	&:after {
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+	}
+	margin: auto;
+	position: relative;
+
+	&:before,
+	&:after {
+		top: 0;
+		left: 0;
+		position: absolute;
+	}
+	&:before {
+		padding: .5em;
+		box-sizing: border-box;
+		font-size: 2rem;
+		line-height: 6rem;
+	}
+	&:after {
+		text-transform: uppercase;
+		line-height: 12rem;
+	}
+}
+
+.html {
+	@include circular-progress(
+		85,
+		html,
+		orange,
+		$third-color
+	);
+}
+
+.css {
+	@include circular-progress(
+		70,
+		css,
+		steelblue,
+		$third-color
+	);
+}
+
+.js {
+	@include circular-progress(
+		50,
+		javascript,
+		teal,
+		$third-color
+	);
+}
+
+.mongodb {
+	@include circular-progress(
+		60,
+		mongodb,
+		#7FC857,
+		$third-color
+	);
+}
+
+.mysql {
+	@include circular-progress(
+		70,
+		mysql,
+		$first-color,
+		$third-color
+	);
+}
+
+.nodejs {
+	@include circular-progress(
+		60,
+		nodejs,
+		$first-color,
+		$third-color
+	);
+}

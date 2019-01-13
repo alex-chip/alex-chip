@@ -1,0 +1,34 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+	font-family: $font-family;
+	padding: 0;
+	margin: 0;
+	font-size: $large;
+	line-height: 1.5;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+// imagenes responsive
+img {
+	max-width: 100%;
+	height: auto;
+}

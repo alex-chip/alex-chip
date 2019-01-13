@@ -1,0 +1,39 @@
+// variable de colores
+
+// css
+:root {
+	--first-color: #D63C5E;
+	--second-color: #2C2939;
+	--third-color: #ECECEC;
+
+	--html-color: ;
+	--css-color: ;
+	--js-color: ;
+	--mongodb-color: #7FC857;
+	--mysql-color: ;
+	--nodejs-color: ;
+}
+
+
+// sass
+$first-color: #D63C5E;
+$second-color: #2C2939;
+$third-color: #ECECEC;
+
+// Variables para las tipo de fuentes
+$font-family: Arial, Helvetica, sans-serif;
+
+// fuentes
+$normal: 16px;
+$small: $normal * .8;
+$large: $normal * 1.2;
+
+// variables para los breakpoints
+$s: 0;
+$m: 640px;
+$l: 1024px;
+$xl: 1440px;
+
+// variable para el width maximo del contenedor
+$max-width: 1200px;
+$gap: 2rem;

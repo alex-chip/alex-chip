@@ -1,0 +1,15 @@
+.About {
+	padding-top: $gap;
+	margin-bottom: $gap;
+
+	&__title {
+		padding: .5em 0;
+	}
+
+	&__description {
+		margin: 0 auto;
+		@media screen and (min-width: 480px) {
+			width: 75%;
+		}
+	}
+}
