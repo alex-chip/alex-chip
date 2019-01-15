@@ -3,3 +3,61 @@
 	$deg: $percent / 100 * 180;
 	@return #{$deg}deg;
 }
+
+// funcion para detectar si el breakpoint es parte del core
+/// @group mq
+/// @author Alex Chip
+/// @param {number} $bp - breakpoint
+/// @example scss
+/// .elemento {
+///		@if isCoreBreakpoint(l) {
+///			$customBp: 720px;
+///  	}
+/// }
+
+@function isCoreBreakpoint($bp) {
+	@if map-get($breakpoints, $bp ) {
+		@return true
+	} @else {
+		@return false
+	}
+}
+
+/// Devulve true si el breakpoint es valido (em, rem, px)
+
+@function isValidBreakpoint($bp) {
+	@if type-of($bp) == number and (unit($bp)) == 'px' or unit($bp) == 'em' pr unit($bp) == 'rem' {
+		@return true
+	} @else {
+		@return false
+	}
+}
+
+/// Obtiene un breakpoint del core
+/// @group mq
+/// @author Alex Chip
+/// @param {number} $bp - breakpoint a obtener
+@function getBp($bp) {
+	@return map-get($breakpoints, $bp)
+}
+
+/// Convertir un valor en em 0 rem a px
+/// @group mq
+/// @author Alex Chip
+/// @param {number} $value - var a convertir a pixeles
+
+@function toPx($value) {
+	@if type-of($value) == number {
+		@if unit($value) == 'em' {
+			@return ($value / 1em) * 16px;
+		} @else if unit($value) == 'rem' {
+			@return ($value / 1rem) * 16px;
+		} @else if unit($value) == 'px' {
+			@return $value;
+		} @else {
+			@error 'La funcion toPx() solo acepta numeros en em o rem o px'
+		}
+	} @else {
+		@error "La funcion toPx() solo acepta numeros en em o rem"
+	}
+}

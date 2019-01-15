@@ -29,3 +29,130 @@
 		transform: scale(1.1) rotate(-#{$progress});
 	}
 }
+
+// mixin para media querys
+// FROM mayor que ($bp)
+// @group mq
+// @author Alex Chip
+// @param {number} $from - breakpoint
+// @example scss
+// 		.elemento {
+// 			width: 30%;
+//			@include from (m) {
+//				width: 50%;
+//			}
+//		}
+@mixin from($from) {
+	// si el bp es del core
+	@if isCoreBreakpoint($from) {
+		// no imprime media query para tamaño s
+		@if $from == s {
+			@content;
+		}
+		// imprime media query en los otros tamaños
+		@else {
+			@media screen and (min-width: getBp($from)) { @content; }
+		}
+	}
+	// si el bp no es del core, pero es una unidad valida
+	@else if isValidBreakpoint($from) {
+		@media screen and (min-width: $from) {
+			@content;
+		}
+	}
+	// Error
+	@else {
+		@error 'El mixin from() solo puede recibir un breakpoint del core (#{map-keys($breakpoints)}) o un numero en px, em o rem';
+	}
+}
+
+// To (es menor que $to)
+// @group mq
+// @author Alex Chip
+// @param {number} $to - breakpoint
+// example scss
+// 	.elemento {
+//		width: 50%;
+//		@include to(m) {
+//			width: 30%;
+//    	}
+//  }
+
+@mixin to($to) {
+	// Si es un brealpoint del core
+	@if isCoreBreakpoint($to) {
+		@if $to == s {
+			@content;
+		} @else {
+			@media screen and (max-width: getBp($to) - 1px) { @content; }
+		}
+	}
+	// Si es un breakpoint valido (px, em, rem)
+	@else if isValidBreakpoint($to) {
+		@media screen and (max-width: toPx($to) - 1) { @content; }
+	}
+	// Si no es un breakpoint valido lanza error
+	@else {
+		@error 'El mixin to() solo puede recibir un breakpoint del core (#{map-keys($breakpoints)}) o un numero en px, em o rem';
+	}
+}
+
+// fromTo la regla se ejecuta entre ambos breakpoints.
+// @group mq
+// @author Alex Chip
+// @param {number} $from - breakpoint desde que medida se iniciara la regla.
+// @param {number} $to - breakpoint hasta que medida se ejecutara la regla.
+// @example scss
+//	.elemento {
+// 		background-color: cyan;
+//		@include fromTo(s, l) {
+//			background-color: darken(cyan, .8);
+//		}
+//	}
+
+@mixin fromTo($from, $to) {
+	// Si ambos son breakpoints del core
+	@if isCoreBreakpoint($from) and not isCoreBreakpoint($to) {
+		@if isValidBrakpoint($to) {
+			@if toPx($to) > toPx(getBp($from)) {
+				@media screen and (min-width: getBp($from)) and (max-width: toPx($to) - 1px) {
+					@content;
+				}
+			} @else {
+				@error 'El segundo argumento del mixin fromTo debe ser mayor que el primero';
+			}
+		} @else {
+			@error 'El segundo argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un numero en px, em o rem';
+		}
+	}
+
+	// Si solo $to es breakpoint del core
+	@else if not isCoreBreakpoint($from) and isCoreBreakpoint($to) {
+		@if isValidBreakpoint($from) {
+			@if toPx(getBp($to)) > toPx($from) {
+				@media screen and (min-width: $from) and (max-width: getBp($to) -1px) {
+					@content;
+				}
+			} @else {
+				@error 'El segundo argumento del mixin fromTo() debe der mayor que el primero';
+			}
+		} @else {
+			@error 'El primer argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un numero en px, em o rem';
+		}
+	}
+
+	// si no son breakpoints del core pero son breakpoints validos (px, em,rem)
+	@else if isValidBreakpoint($from) and isValidBreakpoint($to) {
+		@if toPx($to) > toPx($from) {
+			@media screen and (min-width: $from) and (max-width: toPx($to) - 1px) {
+				@content;
+			}
+		} @else {
+			@error "El segundo argumento del mixin fromTo debe ser mayor que el primero";
+		}
+	}
+	// si al menos hay un breakpoint invalido
+	@else {
+		@error 'Los argumentos del mixin fromTo() deben ser breakpoints del core (#{map-keys($breakpoints)}) o numeros en px, em o rem';
+	}
+}

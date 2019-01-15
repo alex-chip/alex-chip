@@ -9,7 +9,7 @@
 			// grid-template-rows: repeat()
 			padding: 0 $gap / 2;
 	
-			@media screen and (min-width: $l) {
+			@include from(l) {
 				grid-template-columns: repeat(4, 1fr);
 			}
 		}
@@ -20,7 +20,7 @@
 			border: 1px solid rgba($second-color, .5);
 			border-radius: .3em;
 			&::before {
-				transition: all .4s;
+				transition: all .5s;
 				content: "";
 				position: absolute;
 				bottom: 0%;

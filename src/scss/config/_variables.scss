@@ -3,7 +3,8 @@
 // css
 :root {
 	// colores
-	--first-color: #D63C5E;
+	// --first-color: #D63C5E;
+	--first-color: #007BDF;
 	--second-color: #2C2939;
 	--third-color: #ECECEC;
 
@@ -18,10 +19,9 @@
 	--size-progresive: 12rem;
 }
 
-$size-progresive: 12rem;
-
-// sass
-$first-color: #D63C5E;
+// sass colores
+// $first-color: #D63C5E;
+$first-color: #007BDF;
 $second-color: #2C2939;
 $third-color: #ECECEC;
 
@@ -32,6 +32,8 @@ $mongodb-color: #7FC857;
 $mysql-color: #005E86;
 $nodejs-color: #6FA660;
 
+// // variable (en sass) size para el tamaño de los circulos progresivos
+$size-progresive: 12rem;
 // Variables para las tipo de fuentes
 $font-family: Arial, Helvetica, sans-serif;
 
@@ -40,11 +42,14 @@ $normal: 16px;
 $small: $normal * .8;
 $large: $normal * 1.2;
 
-// variables para los breakpoints
-$s: 0;
-$m: 640px;
-$l: 1024px;
-$xl: 1440px;
+// map para los breakpoints
+$breakpoints : (
+	s: 0,
+	m: 640px,
+	l: 1024px,
+	lg: 1024px,
+	xl: 1440px
+) !default;
 
 // variable para el width maximo del contenedor
 $max-width: 1200px;
