@@ -1,2 +1,4 @@
-import style from '../scss/styles.scss'
-import pug from '../pug/index.pug'
+require("../scss/styles.scss")
+require("../pug/index.pug")
+
+// require ("../assets/img/banner.jpg")

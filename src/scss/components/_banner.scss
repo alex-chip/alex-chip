@@ -1,7 +1,8 @@
 .Banner {
-	background: url('https://previews.dropbox.com/p/thumb/AAUo8rwYUBGodcCvLKBZbl52VI6ZIp-PpCqT7eej0RmKvXgmaAgirVhMhiy1kE-Q3El6HqVbRZDHLch10ol4idwaAm1azTx2ocZrWdhmHjzs3TMQ2cre2_7kkytH6u_O8rB5zvogxlwz46HP2SBASg8M5R_BWy0odH0V1CQ4HEg2EQfUuYSFDW954nDpDu-fetlgjZM84UznukTcSdBnwdY0wKjIVmDP30NlZpzQuChsAA/p.jpeg') center center / cover no-repeat;
-	min-height: 100vh;
+	background: url('https://res.cloudinary.com/alexchip/image/upload/v1551813750/4909b967009975844b5f0cfd7a6e712c.jpg') center center / cover no-repeat;
+	height: 100vh;
 	position: relative;
+	background-attachment: fixed;
 
 	&::before {
 		content: "";
@@ -22,8 +23,6 @@
 		text-align: center;
 		color: #FFF;
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
 		width: 100%;
 	}
 

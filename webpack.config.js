@@ -32,11 +32,6 @@ module.exports = {
 				use: ['style-loader','css-loader','sass-loader'],
 				exclude: /node_modules/
 			},
-			// {
-			// 	test: /\.css$/,
-			// 	use: ['style-loader', 'css-loader', 'sass-loader'],
-			// 	exclude: /node_modules/
-			// },
 			{
 				test: /\.pug$/,
 				use: ['pug-loader']
@@ -45,17 +40,17 @@ module.exports = {
 				test: /\.(png|jpg|gif)$/,
 				loader: 'file-loader'
 				// options: {
-				// 	publicPath: 'src/assets',
-				// 	outputPath: 'assets/img'
-				// }
-				// include: path.join(__dirname, 'src/assets')
+				// 	publicPath: `${__dirname}/src/assets/img`,
+				// 	outputPath: `${__dirname}/dist/assets/img`
+				// },
+				// include: `${__dirname}/src/assets`
 			}
 		]
 	},
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: './src/pug/index.pug',
-			filename: '../index.html'
+			filename: `${__dirname}/index.html`
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'style.css',

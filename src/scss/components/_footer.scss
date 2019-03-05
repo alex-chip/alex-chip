@@ -29,18 +29,22 @@
 			color: rgba(#FFF, .6);
 			font-size: .9em;
 			margin: 0;
-
+			
 			&::before {
 				margin-right: .5em;
 			}
-		}
 
+			& > span {
+				font-weight: bold;
+			}
+		}
+		
 		@include from(m) {
 			display: flex;
 			justify-content: space-around;
 		}
 	}
-
+	
 	&__info {
 		color: rgba(#000, .2);
 	}
