@@ -5,11 +5,14 @@
 	
 		&-gallery {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(1, 1fr);
 			grid-gap: $gap;
-			// grid-template-rows: repeat()
 			padding: 0 $gap / 2;
 	
+			@include from(m) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
 			@include from(l) {
 				grid-template-columns: repeat(4, 1fr);
 			}
